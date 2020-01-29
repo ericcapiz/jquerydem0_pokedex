@@ -1,87 +1,96 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 @import "reset";
 
+$mainRed: #DE1537;
+$darkRed: #8F0C25;
+$blue: #27A4F3;
+$grey: #DEDEDE;
+$green: #4CA459;
 
-
-body {
-  line-height: 1;
-  background: white;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:after,
-blockquote:before,
-q:after,
-q:before {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-body {
+body{
   font-family: 'Roboto', sans-serif;
+  background: $grey;
 }
-
-h1 {
-  font-weight: 100;
-  font-size: 50px;
+*{
+  box-sizing: border-box;
 }
-
-.home {
-  height: 100%;
+.pokedex{
+  display: block;
   width: 100%;
-  text-align: center;
-  .Aligner {
-    min-height: 100vh;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+  max-width: 400px;
+  height: 500px;
+  margin: 50px auto;
+  background: $mainRed;
+  overflow: hidden;
+  position: relative;
+  h1{
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 25px;
+    display: block;
   }
-  img {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  .Aligner-item {
-    max-width: 50%;
-  }
-  .menu ul li {
-    padding: 10px 15px;
-    display: inline-block;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+  h3{
     font-weight: 500;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    display: block;
   }
-  .version-num {
-    background: #E8E8E8;
-    border-radius: 4px;
-    padding: 7px 15px;
+  p{
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    // margin-bottom: 10px;
+    // margin-top: 5px;
+    display: block;
+  }
+  form{
+    text-align: center;
+  }
+  input[type=text]{
+    font-size: 2rem;
+    margin: 25px auto;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid $grey;
+    text-align: center;
+  }
+  .btn{
     display: inline-block;
-    font-size: 12px;
-    margin: 10px 0 20px;
+    padding: 20px;
+    background: $blue;
+    color: white;
+    cursor: pointer;
   }
-  a {
-    text-decoration: none;
-    color: #30395C;
-    transition: all 0.3s ease-in-out;
+  .loading-container{
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    display: none;
+    &.active{
+      display: flex;
+    }
   }
-  a:hover {
-    color: #43D4D6;
+}
+
+.poke-img{
+  width: 150px;
+  height: 150px;
+  border: 5px solid $grey;
+  display: block;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 5px;
+  img{
+    width: 100%;
   }
 }
